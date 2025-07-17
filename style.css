@@ -69,15 +69,39 @@ h2 {
   bottom: 0;
   width: 54%;
   height: 80%;
-  background: var(--primary);
   background-image: url(foto.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  animation: bgFade 8s infinite;
   text-align: center;
-  transition: all 1s ease-in-out;
+  transition: all 2s ease-in-out;
   box-shadow: 0 0 5px var(--shadow-color);
-  padding: 20px 10px;
+  padding: 10px 10px;
+  overflow: hidden; /* Adicione isso para esconder imagens que ultrapassem */
+}
+
+@keyframes bgFade {
+  0% {
+    background-image: url(foto.jpg);
+    opacity: 1;
+  }
+  25% {
+    background-image: url(foto1.jpg);
+    opacity: 1;
+  }
+  50% {
+    background-image: url(foto3.png);
+    opacity: 1;
+  }
+  75% {
+    background-image: url(foto2.jpg);
+    opacity: 1;
+  }
+  100% {
+    background-image: url(foto.jpg);
+    opacity: 1;
+  }
 }
 
 .envelope > .letter > .text {
@@ -86,10 +110,12 @@ h2 {
   text-align: left;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 strong {
   font-size: 14px;
+  justify-self: center;
 }
 p {
   font-size: 10px;
